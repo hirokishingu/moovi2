@@ -6,7 +6,7 @@ class Scraping
 
     while true
 
-    current_page = agent.get("http://review-movie.herokuapp.com/")
+    current_page = agent.get("http://review-movie.herokuapp.com/" + next_url)
     elements = current_page.search('.entry-title a')
     elements.each do |ele|
       links << ele.get_attribute('href')
